@@ -65,6 +65,12 @@ jobs:
           go build -ldflags "-s -w" -trimpath -o "$FILENAME"
           
           export GOOS=linux
+          export GOARCH=arm
+          export GOARM=6
+          export FILENAME=artifacts/go2rtc_linux_armv6
+          go build -ldflags "-s -w" -trimpath -o "$FILENAME"
+          
+          export GOOS=linux
           export GOARCH=mipsle
           export FILENAME=artifacts/go2rtc_linux_mipsel
           go build -ldflags "-s -w" -trimpath -o "$FILENAME"
